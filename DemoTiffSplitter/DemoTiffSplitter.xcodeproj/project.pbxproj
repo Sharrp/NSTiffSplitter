@@ -1,0 +1,309 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		045071EA13880C7F00A1A15A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045071E913880C7F00A1A15A /* UIKit.framework */; };
+		045071EC13880C7F00A1A15A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045071EB13880C7F00A1A15A /* Foundation.framework */; };
+		045071EE13880C7F00A1A15A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045071ED13880C7F00A1A15A /* CoreGraphics.framework */; };
+		045071F413880C7F00A1A15A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 045071F213880C7F00A1A15A /* InfoPlist.strings */; };
+		045071F713880C7F00A1A15A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 045071F613880C7F00A1A15A /* main.m */; };
+		045071FA13880C7F00A1A15A /* DemoTiffSplitterAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 045071F913880C7F00A1A15A /* DemoTiffSplitterAppDelegate.m */; };
+		045071FD13880C7F00A1A15A /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045071FB13880C7F00A1A15A /* MainWindow.xib */; };
+		0450720013880C7F00A1A15A /* DemoTiffSplitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045071FF13880C7F00A1A15A /* DemoTiffSplitterViewController.m */; };
+		0450720313880C7F00A1A15A /* DemoTiffSplitterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0450720113880C7F00A1A15A /* DemoTiffSplitterViewController.xib */; };
+		0450720C13880DAD00A1A15A /* Example.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 0450720B13880DAD00A1A15A /* Example.tiff */; };
+		0450721213880EA400A1A15A /* NSTiffSplitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0450721113880EA400A1A15A /* NSTiffSplitter.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		045071E513880C7F00A1A15A /* DemoTiffSplitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoTiffSplitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		045071E913880C7F00A1A15A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		045071EB13880C7F00A1A15A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		045071ED13880C7F00A1A15A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		045071F113880C7F00A1A15A /* DemoTiffSplitter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DemoTiffSplitter-Info.plist"; sourceTree = "<group>"; };
+		045071F313880C7F00A1A15A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		045071F513880C7F00A1A15A /* DemoTiffSplitter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DemoTiffSplitter-Prefix.pch"; sourceTree = "<group>"; };
+		045071F613880C7F00A1A15A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		045071F813880C7F00A1A15A /* DemoTiffSplitterAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoTiffSplitterAppDelegate.h; sourceTree = "<group>"; };
+		045071F913880C7F00A1A15A /* DemoTiffSplitterAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTiffSplitterAppDelegate.m; sourceTree = "<group>"; };
+		045071FC13880C7F00A1A15A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		045071FE13880C7F00A1A15A /* DemoTiffSplitterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoTiffSplitterViewController.h; sourceTree = "<group>"; };
+		045071FF13880C7F00A1A15A /* DemoTiffSplitterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTiffSplitterViewController.m; sourceTree = "<group>"; };
+		0450720213880C7F00A1A15A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DemoTiffSplitterViewController.xib; sourceTree = "<group>"; };
+		0450720B13880DAD00A1A15A /* Example.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Example.tiff; sourceTree = "<group>"; };
+		0450721013880EA400A1A15A /* NSTiffSplitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSTiffSplitter.h; sourceTree = "<group>"; };
+		0450721113880EA400A1A15A /* NSTiffSplitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSTiffSplitter.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		045071E213880C7F00A1A15A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				045071EA13880C7F00A1A15A /* UIKit.framework in Frameworks */,
+				045071EC13880C7F00A1A15A /* Foundation.framework in Frameworks */,
+				045071EE13880C7F00A1A15A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		045071DA13880C7F00A1A15A = {
+			isa = PBXGroup;
+			children = (
+				045071EF13880C7F00A1A15A /* DemoTiffSplitter */,
+				045071E813880C7F00A1A15A /* Frameworks */,
+				0450720A13880D9000A1A15A /* Resources */,
+				045071E613880C7F00A1A15A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		045071E613880C7F00A1A15A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				045071E513880C7F00A1A15A /* DemoTiffSplitter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		045071E813880C7F00A1A15A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				045071E913880C7F00A1A15A /* UIKit.framework */,
+				045071EB13880C7F00A1A15A /* Foundation.framework */,
+				045071ED13880C7F00A1A15A /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		045071EF13880C7F00A1A15A /* DemoTiffSplitter */ = {
+			isa = PBXGroup;
+			children = (
+				0450720913880C9B00A1A15A /* NSTiffSplitter */,
+				045071F813880C7F00A1A15A /* DemoTiffSplitterAppDelegate.h */,
+				045071F913880C7F00A1A15A /* DemoTiffSplitterAppDelegate.m */,
+				045071FB13880C7F00A1A15A /* MainWindow.xib */,
+				045071FE13880C7F00A1A15A /* DemoTiffSplitterViewController.h */,
+				045071FF13880C7F00A1A15A /* DemoTiffSplitterViewController.m */,
+				0450720113880C7F00A1A15A /* DemoTiffSplitterViewController.xib */,
+				045071F013880C7F00A1A15A /* Supporting Files */,
+			);
+			path = DemoTiffSplitter;
+			sourceTree = "<group>";
+		};
+		045071F013880C7F00A1A15A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				045071F113880C7F00A1A15A /* DemoTiffSplitter-Info.plist */,
+				045071F213880C7F00A1A15A /* InfoPlist.strings */,
+				045071F513880C7F00A1A15A /* DemoTiffSplitter-Prefix.pch */,
+				045071F613880C7F00A1A15A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0450720913880C9B00A1A15A /* NSTiffSplitter */ = {
+			isa = PBXGroup;
+			children = (
+				0450721013880EA400A1A15A /* NSTiffSplitter.h */,
+				0450721113880EA400A1A15A /* NSTiffSplitter.m */,
+			);
+			name = NSTiffSplitter;
+			sourceTree = "<group>";
+		};
+		0450720A13880D9000A1A15A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0450720B13880DAD00A1A15A /* Example.tiff */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		045071E413880C7F00A1A15A /* DemoTiffSplitter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0450720613880C7F00A1A15A /* Build configuration list for PBXNativeTarget "DemoTiffSplitter" */;
+			buildPhases = (
+				045071E113880C7F00A1A15A /* Sources */,
+				045071E213880C7F00A1A15A /* Frameworks */,
+				045071E313880C7F00A1A15A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DemoTiffSplitter;
+			productName = DemoTiffSplitter;
+			productReference = 045071E513880C7F00A1A15A /* DemoTiffSplitter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		045071DC13880C7F00A1A15A /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 045071DF13880C7F00A1A15A /* Build configuration list for PBXProject "DemoTiffSplitter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 045071DA13880C7F00A1A15A;
+			productRefGroup = 045071E613880C7F00A1A15A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				045071E413880C7F00A1A15A /* DemoTiffSplitter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		045071E313880C7F00A1A15A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				045071F413880C7F00A1A15A /* InfoPlist.strings in Resources */,
+				045071FD13880C7F00A1A15A /* MainWindow.xib in Resources */,
+				0450720313880C7F00A1A15A /* DemoTiffSplitterViewController.xib in Resources */,
+				0450720C13880DAD00A1A15A /* Example.tiff in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		045071E113880C7F00A1A15A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				045071F713880C7F00A1A15A /* main.m in Sources */,
+				045071FA13880C7F00A1A15A /* DemoTiffSplitterAppDelegate.m in Sources */,
+				0450720013880C7F00A1A15A /* DemoTiffSplitterViewController.m in Sources */,
+				0450721213880EA400A1A15A /* NSTiffSplitter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		045071F213880C7F00A1A15A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				045071F313880C7F00A1A15A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		045071FB13880C7F00A1A15A /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				045071FC13880C7F00A1A15A /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		0450720113880C7F00A1A15A /* DemoTiffSplitterViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0450720213880C7F00A1A15A /* en */,
+			);
+			name = DemoTiffSplitterViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0450720413880C7F00A1A15A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0450720513880C7F00A1A15A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		0450720713880C7F00A1A15A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DemoTiffSplitter/DemoTiffSplitter-Prefix.pch";
+				INFOPLIST_FILE = "DemoTiffSplitter/DemoTiffSplitter-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0450720813880C7F00A1A15A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DemoTiffSplitter/DemoTiffSplitter-Prefix.pch";
+				INFOPLIST_FILE = "DemoTiffSplitter/DemoTiffSplitter-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		045071DF13880C7F00A1A15A /* Build configuration list for PBXProject "DemoTiffSplitter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0450720413880C7F00A1A15A /* Debug */,
+				0450720513880C7F00A1A15A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0450720613880C7F00A1A15A /* Build configuration list for PBXNativeTarget "DemoTiffSplitter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0450720713880C7F00A1A15A /* Debug */,
+				0450720813880C7F00A1A15A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 045071DC13880C7F00A1A15A /* Project object */;
+}

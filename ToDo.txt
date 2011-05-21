@@ -1,0 +1,3 @@
+- Handle situations when not enough space on disk to storage mapped file;
+- Add support to other types of tags;
+- Check, that every IFD doesn't contain previous IFD's offsets (as link to next IFD)

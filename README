@@ -1,0 +1,26 @@
+NSTiffSplitter
+by Anton Sharrp Furin - http://sharrp.blogspot.com
+
+
+How to use it
+==========================
+
+NSTiffSplitter is an Objective-C class which allow you to show multipage TIFF files on iPad / iPhone / iPod Touch. Use it in two steps:
+
+1) Create NSTiffSplitter instance:
+
+- (id) initWithData:(NSData *)imgData usingMapping:(BOOL)usingMapping;
+or
+- (id) initWithPathToImage:(NSString *)imgPath;
+Second method always use mapping.
+
+2) Get any page of tiff file with next method:
+- (NSData *) dataForImage:(NSUInteger)imageIndex;
+It's returns montage tiff file for every page of multipage tiff file.
+
+You can get count of images in file with countOfImages property.
+
+- Anton Sharrp Furin
+
+Web: http://sharrp.blogspot.com
+Twitter: http://twitter.com/thesharrp
