@@ -16,7 +16,7 @@ Second method always use mapping.
 
 2) Get any page of tiff file with next method:
 - (NSData *) dataForImage:(NSUInteger)imageIndex;
-It's returns montage tiff file for every page of multipage tiff file.
+It returns monopage tiff file for every page of multipage tiff file.
 
 You can get count of images in file with countOfImages property.
 
