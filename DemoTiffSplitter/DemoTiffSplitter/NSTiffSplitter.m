@@ -94,6 +94,7 @@
                 sizeOfImage[i] = 8 + 2 + 12 * countOfFields + 4; // header + count of fields + fields + offset of next IFD (4 bytes of zeros)
                 for (int j = 0; j < countOfFields; ++j)
                 {
+                    
                     int tag = [self valueForBytesAt:IFDOffsets[i]+2+12*j count:2];
                     int tagType = [self valueForBytesAt:IFDOffsets[i]+2+12*j+2 count:2];
                     int countOfElements = [self valueForBytesAt:IFDOffsets[i]+2+12*j+4 count:4];
@@ -107,9 +108,17 @@
                     if (tag == 279) // strip byte counts
                     {
                         int stripBytesOffset = [self valueForBytesAt:IFDOffsets[i]+2+12*j+8 count:4];
-                        for (int k = 0; k < countOfElements; ++k)
+                        
+                        if (bytesInField > 4)
                         {
-                            sizeOfImage[i] += [self valueForBytesAt:stripBytesOffset+sizeOfTypes[tagType]*k count:sizeOfTypes[tagType]];
+                            for (int k = 0; k < countOfElements; ++k)
+                            {
+                                sizeOfImage[i] += [self valueForBytesAt:stripBytesOffset+sizeOfTypes[tagType]*k count:sizeOfTypes[tagType]];
+                            }
+                        }
+                        else
+                        {
+                            sizeOfImage[i] += stripBytesOffset; //in this case it's not offset - it's value
                         }
                     }
                 }
@@ -211,6 +220,7 @@
     int stripOffsetsTagOld = 0, stripOffsetsTagNew = 0;
     int stripByteCountsTagOld = 0;
     int newOneFieldNumber = 0;
+    int sizeOf_countOfBytesInStrip_type = 0;
 	for (int i = 0; i < fieldsCount; ++i)
 	{
         int fieldOffset = ifdOffset + 2 + 12 * i;
@@ -224,6 +234,7 @@
             else if ([self valueForBytesAt:fieldOffset count:2] == 279)
             {
                 stripByteCountsTagOld = fieldOffset;
+                sizeOf_countOfBytesInStrip_type = [self valueForBytesAt:fieldOffset+2 count:2];
             }
             
             int bytesToCopy = sizeOfTypes[[self valueForBytesAt:fieldOffset+2 count:2]] * [self valueForBytesAt:fieldOffset+4 count:4];
@@ -269,7 +280,7 @@
     int offsetOfStripsOffsets = [self valueForBytesAt:stripOffsetsTagOld+8 count:4];
     int stripBytesCountOffset = [self valueForBytesAt:stripByteCountsTagOld+8 count:4];
     
-    // Write correct offset of stripsOffsets
+    // Write tag with strip offset (or offset of array with stripes's offsets)
     buffer = (Byte *)malloc(4);
     buffer[isBigEndian ? 0 : 3] = (largeValueOffset >> 24) & 255;
     buffer[isBigEndian ? 1 : 2] = (largeValueOffset >> 16) & 255;
@@ -278,12 +289,10 @@
     [oneData replaceBytesInRange:NSMakeRange(stripOffsetsTagNew + 8, 4) withBytes:buffer];
     free(buffer);
     
-    int arrayOfStripsOffsets = largeValueOffset;
-    largeValueOffset += 4 * countOfStripes;
-    for (int j = 0; j < countOfStripes; ++j)
-    {
-        int stripBytesCount = [self valueForBytesAt:stripBytesCountOffset+4*j count:4];
-        int stripOffset = [self valueForBytesAt:offsetOfStripsOffsets+4*j count:4];
+    if (countOfStripes == 1)
+    {        
+        int stripBytesCount = stripBytesCountOffset;
+        int stripOffset = offsetOfStripsOffsets;
         
         // Write data
         buffer = (Byte *)malloc(stripBytesCount);
@@ -297,13 +306,41 @@
         buffer[isBigEndian ? 1 : 2] = (largeValueOffset >> 16) & 255;
         buffer[isBigEndian ? 2 : 1] = (largeValueOffset >> 8) & 255;
         buffer[isBigEndian ? 3 : 0] = largeValueOffset & 255;
-        [oneData replaceBytesInRange:NSMakeRange(arrayOfStripsOffsets, 4) withBytes:buffer];
+        [oneData replaceBytesInRange:NSMakeRange(stripOffsetsTagNew + 8, 4) withBytes:buffer];
         free(buffer);
         
         largeValueOffset += stripBytesCount;
-        arrayOfStripsOffsets += 4;
     }
-    
+    else
+    {        
+        // Write correct offset of stripsOffsets 
+        int arrayOfStripsOffsets = largeValueOffset;
+        largeValueOffset += 4 * countOfStripes;
+        for (int j = 0; j < countOfStripes; ++j)
+        {
+            int stripBytesCount = [self valueForBytesAt:stripBytesCountOffset+4*j count:4];
+            int stripOffset = [self valueForBytesAt:offsetOfStripsOffsets+4*j count:4];
+            
+            // Write data
+            buffer = (Byte *)malloc(stripBytesCount);
+            [data getBytes:buffer range:NSMakeRange(stripOffset, stripBytesCount)];
+            [oneData replaceBytesInRange:NSMakeRange(largeValueOffset, stripBytesCount) withBytes:buffer];
+            free(buffer);
+            
+            // Write offset of strip        
+            buffer = (Byte *)malloc(4);
+            buffer[isBigEndian ? 0 : 3] = (largeValueOffset >> 24) & 255;
+            buffer[isBigEndian ? 1 : 2] = (largeValueOffset >> 16) & 255;
+            buffer[isBigEndian ? 2 : 1] = (largeValueOffset >> 8) & 255;
+            buffer[isBigEndian ? 3 : 0] = largeValueOffset & 255;
+            [oneData replaceBytesInRange:NSMakeRange(arrayOfStripsOffsets, 4) withBytes:buffer];
+            free(buffer);
+            
+            largeValueOffset += stripBytesCount;
+            arrayOfStripsOffsets += 4;
+        }
+    }
+        
     // Set proper size of new data
     [oneData setLength:largeValueOffset];
     
