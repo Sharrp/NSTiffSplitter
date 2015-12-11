@@ -6,7 +6,6 @@
 //
 
 #import "NSTiffSplitter.h"
-#import "Utilities.h"
 
 @interface NSTiffSplitter()
 
@@ -148,8 +147,7 @@
         NSError *exception = nil;
         imgData = [[NSData alloc] initWithContentsOfURL:imgUrl options:NSDataReadingMappedAlways error:&exception];
         if (exception != nil) {
-            [Utilities logMessage:[NSString stringWithFormat:@"%@ exception: description %@, reason %@", NSStringFromSelector(_cmd), exception.localizedDescription, exception.localizedFailureReason]];
-
+            NSLog([NSString stringWithFormat:@"%@ exception: description %@, reason %@", NSStringFromSelector(_cmd), exception.localizedDescription, exception.localizedFailureReason]);
         }
     } else {
         imgData = [[NSData alloc] initWithContentsOfURL:imgUrl];
