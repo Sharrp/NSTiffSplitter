@@ -18,6 +18,7 @@
 		0450720313880C7F00A1A15A /* DemoTiffSplitterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0450720113880C7F00A1A15A /* DemoTiffSplitterViewController.xib */; };
 		0450720C13880DAD00A1A15A /* Example.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 0450720B13880DAD00A1A15A /* Example.tiff */; };
 		0450721213880EA400A1A15A /* NSTiffSplitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0450721113880EA400A1A15A /* NSTiffSplitter.m */; };
+		EACFFCEE1C5289A900105418 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EACFFCED1C5289A900105418 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		0450720B13880DAD00A1A15A /* Example.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Example.tiff; sourceTree = "<group>"; };
 		0450721013880EA400A1A15A /* NSTiffSplitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSTiffSplitter.h; sourceTree = "<group>"; };
 		0450721113880EA400A1A15A /* NSTiffSplitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSTiffSplitter.m; sourceTree = "<group>"; };
+		EACFFCED1C5289A900105418 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		045071DA13880C7F00A1A15A = {
 			isa = PBXGroup;
 			children = (
+				EACFFCED1C5289A900105418 /* Default-568h@2x.png */,
 				045071EF13880C7F00A1A15A /* DemoTiffSplitter */,
 				045071E813880C7F00A1A15A /* Frameworks */,
 				0450720A13880D9000A1A15A /* Resources */,
@@ -151,6 +154,7 @@
 		045071DC13880C7F00A1A15A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0720;
 			};
 			buildConfigurationList = 045071DF13880C7F00A1A15A /* Build configuration list for PBXProject "DemoTiffSplitter" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -177,6 +181,7 @@
 				045071F413880C7F00A1A15A /* InfoPlist.strings in Resources */,
 				045071FD13880C7F00A1A15A /* MainWindow.xib in Resources */,
 				0450720313880C7F00A1A15A /* DemoTiffSplitterViewController.xib in Resources */,
+				EACFFCEE1C5289A900105418 /* Default-568h@2x.png in Resources */,
 				0450720C13880DAD00A1A15A /* Example.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,8 +233,8 @@
 		0450720413880C7F00A1A15A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -238,6 +243,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -245,7 +251,6 @@
 		0450720513880C7F00A1A15A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
@@ -268,6 +273,7 @@
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "DemoTiffSplitter/DemoTiffSplitter-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thesharrp.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -283,6 +289,7 @@
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "DemoTiffSplitter/DemoTiffSplitter-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thesharrp.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
