@@ -35,7 +35,8 @@
 - (void) awakeFromNib
 {
     NSString *pathToImage = [[NSBundle mainBundle] pathForResource:@"Example" ofType:@"tiff"];
-    splitter = [[NSTiffSplitter alloc] initWithPathToImage:pathToImage];
+    NSURL *imageUrl = [NSURL fileURLWithPath:pathToImage];
+    splitter = [[NSTiffSplitter alloc] initWithImageUrl:imageUrl usingMapping:NO];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -50,7 +51,7 @@
         tiffPageView.image = page;
         [page release];
         
-        pageIndicatorLabel.text = [NSString stringWithFormat:@"%d / %d", currentImage + 1, splitter.countOfImages];
+        pageIndicatorLabel.text = [NSString stringWithFormat:@"%lu / %d", currentImage + 1, splitter.countOfImages];
         previousPageButton.enabled = NO;
         if (splitter.countOfImages < 2)
         {
@@ -81,7 +82,7 @@
         tiffPageView.image = page;
         [page release];
         
-        pageIndicatorLabel.text = [NSString stringWithFormat:@"%d / %d", currentImage + 1, splitter.countOfImages];
+        pageIndicatorLabel.text = [NSString stringWithFormat:@"%lu / %d", currentImage + 1, splitter.countOfImages];
         nextPageButton.enabled = YES;
         if (currentImage == 0)
         {
@@ -99,7 +100,7 @@
         tiffPageView.image = page;
         [page release];
         
-        pageIndicatorLabel.text = [NSString stringWithFormat:@"%d / %d", currentImage + 1, splitter.countOfImages];
+        pageIndicatorLabel.text = [NSString stringWithFormat:@"%lu / %d", currentImage + 1, splitter.countOfImages];
         previousPageButton.enabled = YES;
         if (currentImage == splitter.countOfImages - 1)
         {

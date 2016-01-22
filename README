@@ -9,9 +9,9 @@ NSTiffSplitter is an Objective-C class which allow you to show multipage TIFF fi
 
 1) Create NSTiffSplitter instance:
 
-- (id) initWithData:(NSData *)imgData usingMapping:(BOOL)usingMapping;
+- (id) initWithData:(NSData *)imgData;
 or
-- (id) initWithPathToImage:(NSString *)imgPath;
+- (id) initWithImageUrl:(NSURL *)imgUrl usingMapping:(BOOL)usingMapping;
 Second method always use mapping.
 
 2) Get any page of tiff file with next method:
