@@ -35,7 +35,8 @@
 - (void) awakeFromNib
 {
     NSString *pathToImage = [[NSBundle mainBundle] pathForResource:@"Example" ofType:@"tiff"];
-    splitter = [[NSTiffSplitter alloc] initWithPathToImage:pathToImage];
+    NSURL *imageUrl = [NSURL fileURLWithPath:pathToImage];
+    splitter = [[NSTiffSplitter alloc] initWithImageUrl:imageUrl usingMapping:NO];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.

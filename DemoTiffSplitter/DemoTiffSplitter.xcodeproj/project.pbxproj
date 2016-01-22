@@ -150,6 +150,8 @@
 /* Begin PBXProject section */
 		045071DC13880C7F00A1A15A /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = 045071DF13880C7F00A1A15A /* Build configuration list for PBXProject "DemoTiffSplitter" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -235,7 +237,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -249,7 +251,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 			};
@@ -263,7 +265,9 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DemoTiffSplitter/DemoTiffSplitter-Prefix.pch";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "DemoTiffSplitter/DemoTiffSplitter-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -276,7 +280,9 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DemoTiffSplitter/DemoTiffSplitter-Prefix.pch";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "DemoTiffSplitter/DemoTiffSplitter-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -302,6 +308,7 @@
 				0450720813880C7F00A1A15A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
