@@ -147,7 +147,7 @@
         NSError *exception = nil;
         imgData = [[NSData alloc] initWithContentsOfURL:imgUrl options:NSDataReadingMappedAlways error:&exception];
         if (exception != nil) {
-            NSLog([NSString stringWithFormat:@"%@ exception: description %@, reason %@", NSStringFromSelector(_cmd), exception.localizedDescription, exception.localizedFailureReason]);
+            NSLog(@"%@ exception: description %@, reason %@", NSStringFromSelector(_cmd), exception.localizedDescription, exception.localizedFailureReason);
         }
     } else {
         imgData = [[NSData alloc] initWithContentsOfURL:imgUrl];
