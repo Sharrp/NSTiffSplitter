@@ -1,6 +1,4 @@
 # NSTiffSplitter
-by Anton Sharrp Furin - http://sharrp.blogspot.com
-
 
 ## How to use it
 
@@ -50,7 +48,3 @@ Then, run the following command:
 ```bash
 $ pod install
 ```
-
-Anton Sharrp Furin  
-Web: http://sharrp.blogspot.com  
-Twitter: http://twitter.com/5hr
